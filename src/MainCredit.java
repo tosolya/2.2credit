@@ -2,12 +2,19 @@ public class MainCredit {
     public static void main(String[] args) {
         CreditPaymentService service = new CreditPaymentService();
 
-        long summa = 1000000;
-        int percent = 9;
-        int term = 24;
+        int summa = 1000000;
+        double percent = 9.99/12/100;
+        int term = 12;
 
-        long payment1 = service.calculate(1000000, 9, 24);
+
+        double payment1 = service.calculate(1000000, 9.99/12/100, 12);
         System.out.println(payment1);
+
+        double payment2 = service.calculate(1000000, 9.99/12/100, 24);
+        System.out.println(payment2);
+
+        double payment3 = service.calculate(1000000, 9.99/12/100, 36);
+        System.out.println(payment3);
 
         }
 }

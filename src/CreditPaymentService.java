@@ -1,9 +1,12 @@
 public class CreditPaymentService {
-    public long calculate(int summa,int percent,int term){
+    public double calculate(double summa, double percent, int term){
+        double a = 1+percent;
 
-       long payment1 = summa*(percent/(1+percent)-term-1);
+        double K = (percent * Math.pow(a,term))/(Math.pow(a,term)-1);
+        double payment1 = summa * K;
 
-       return payment1;
+        return payment1;
 
     }
+
 }
